@@ -1,0 +1,1 @@
+export const EVN = ()=> process.env.NODE_ENV

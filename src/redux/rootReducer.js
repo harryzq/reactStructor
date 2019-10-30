@@ -1,4 +1,4 @@
-import { createReducer } from '../store/reducerUtils';
+import { createReducer } from './reducerUtils';
 
 export const key = 'root';
 
