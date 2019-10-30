@@ -16,12 +16,11 @@ import { combineReducers } from 'redux';
 `createReducer` 函数则是用来生成一个新的 reducer 。 
  */
 export const makeAllReducer = (asyncReducers) => combineReducers({
- ...asyncReducers
-});
+  ...asyncReducers
+ })
 
 export const injectReducer = (store, { key, reducer }) => {
  if (Object.hasOwnProperty.call(store.asyncReducers, key)) return;
-
  store.asyncReducers[key] = reducer;
  store.replaceReducer(makeAllReducer(store.asyncReducers));
 }

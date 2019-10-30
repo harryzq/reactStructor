@@ -21,13 +21,7 @@ componentDidMount(){
 } 
 shouldComponentUpdate(nextProps,nextState){
     console.log('shouldComponentUpdate---组件发生改变前执行')
-    // 未更新时不渲染
-    if(nextProps.content !== this.props.content){
-        return true
-    }else{
-        return false
-    }
-   
+    return true
 }
     //shouldComponentUpdate返回true才会被执行。
     UNSAFE_componentWillUpdate(){
@@ -57,4 +51,4 @@ UNSAFE_componentWillUnmount(){
   }
 };
 
-export default connect(mapStateToProps, mapDispatchTpProps)(Home);
+export default connect(mapStateToProps,mapDispatchTpProps)(Home);

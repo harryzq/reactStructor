@@ -1,8 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
-import { makeAllReducer } from './reducerUtils';
-
+import { makeAllReducer,createReducer } from './reducerUtils';
 /**
  * 首先在暴露出的 `createStore` 函数中，先是定义了 Redux 中我们需要的一些 `middlewares` 和 `enhancers` ：
 
@@ -23,7 +22,6 @@ export default (initialState = {}, initialReducer = {}) => {
      enhancers.push(devToolsExtension());
    }
  }
-
  const store = createStore(
    makeAllReducer(initialReducer),
    initialState,

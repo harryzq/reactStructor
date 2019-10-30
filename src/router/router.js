@@ -15,13 +15,12 @@ import {Provider} from 'react-redux'
  */
 import createStore from '../redux/createStore';
 // import { injectReducer } from '../store/reducerUtils';
-// import reducer, { key } from '../redux/rootReducer';
+import reducer, { key } from '../redux/rootReducer';
 
-// export const store  = createStore({} , {
-//   [key]: reducer
-//  });
-
- export const store  = createStore();
+export const store  = createStore({} , {
+  [key]: reducer
+ });
+// export const store  = createStore()
  /**
   * `lazyLoader` 函数是用来异步加载组件的，也就是通过不同的 route 来分割代码做按需加载
   */
@@ -47,6 +46,8 @@ function AppRouter() {
       <Router>
           {/* exact精准匹配 */}
           <Route path="/" exact component={lazyLoader(() => import('../pages/Example'))}
+          />
+          <Route path="/ex" exact component={lazyLoader(() => import('../pages/Example'))}
           />
       </Router>
     </Provider>

@@ -33,4 +33,5 @@ const initalState = {
  auth: false
 };
 
-export default createReducer(initalState, ACTION_HANLDERS);
+// export default createReducer(initalState, ACTION_HANLDERS);
+export default createReducer({}, {});

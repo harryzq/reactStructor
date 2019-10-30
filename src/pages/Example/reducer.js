@@ -15,13 +15,11 @@ export const increment = (value = 1) => (
 export const doubleAsync = () => (
   (dispatch, getState) => (
     new Promise((resolve) => {
-      setTimeout(() => {
         dispatch({
           type: HOME_DOUBLE_ASYNC,
           payload: null
         });
         resolve();
-      }, 200);
     })
   )
 );
