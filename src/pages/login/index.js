@@ -8,13 +8,6 @@ class Login extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){
-}
-  changeValue(e){
-  }
-  addList(){
-      
-  }
   render() {
     //   精简化
     // let {inputValue ,inputChange,clickButton,list} = this.props;
@@ -32,9 +25,7 @@ class Login extends Component {
         <div style={{ margin: "10px", width: "300px" }}>
           <List
             bordered
-            //关键代码-----------start
             dataSource={this.props.list}
-            //关键代码-----------end
             renderItem={item => <List.Item>{item}</List.Item>}
           />
         </div>
